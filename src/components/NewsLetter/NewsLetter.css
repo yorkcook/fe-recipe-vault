@@ -1,0 +1,138 @@
+#subscribebox {
+	position: absolute;
+	background: #314d5b;
+	padding: 20px;
+	font-family: 'PT Sans', sans-serif;
+	width: 350px;
+	top: 40%;
+	left: 79%;
+}
+.widget_follow_subscribe .widget-detail {
+	padding: 36px 30px 40px 30px;
+}
+
+#subscribebox p {
+	color: white;
+	font-size: 15px;
+	text-align: center;
+	font-weight: 700;
+}
+
+.follow-subscribe-social {
+	margin: 0 0 15px;
+	padding: 0 0 14px;
+	border-bottom: #858585 solid 1px;
+}
+
+.follow-subscribe-social ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.follow-subscribe-social ul li {
+	display: inline;
+	margin: 0 15px 0 0;
+	border-bottom: none;
+}
+
+.follow-subscribe-social ul li:last-child {
+	margin: 0;
+}
+
+.follow-subscribe-social ul li a {
+	font-size: 17px;
+	color: #cacaca;
+
+	-webkit-transition: color 0.2s ease-in-out;
+	-moz-transition: color 0.2s ease-in-out;
+	-ms-transition: color 0.2s ease-in-out;
+	-o-transition: color 0.2s ease-in-out;
+	transition: color 0.2s ease-in-out;
+}
+
+.follow-subscribe-social ul li a:hover {
+	color: #fff;
+}
+
+form.subscribe {
+	margin-top: -7px;
+}
+
+form.subscribe input {
+	display: block;
+	width: 100%;
+}
+
+.subscribe-email {
+	height: 45px;
+	border: none;
+	margin: 0 0 10px;
+	font-size: 0.928571em;
+	background-color: #ffffff;
+	text-align: center;
+	color: efefef;
+}
+
+.subscribe-email:focus {
+	outline: 0;
+}
+
+/* ===== Placeholder color ===== */
+form.subscribe .placeholder {
+	/* Internet Explorer 9 */
+	color: #cacaca;
+}
+
+form.subscribe input:-ms-input-placeholder {
+	/* Internet Explorer 10+ */
+	color: #cacaca;
+}
+
+form.subscribe input::-webkit-input-placeholder {
+	/* WebKit browsers */
+	color: #cacaca;
+}
+
+form.subscribe input:-moz-placeholder {
+	/* Mozilla Firefox 4 to 18 */
+	color: #fafafa;
+}
+
+form.subscribe input::-moz-placeholder {
+	/* Mozilla Firefox 19+ */
+	color: #fafafa;
+}
+
+.subscribe-button {
+	height: 45px;
+	font-weight: 700;
+	font-size: 16px;
+	color: #fff;
+	text-transform: uppercase;
+	border: none;
+	background-color: #ea5217;
+
+	-webkit-transition: background-color 0.2s ease-in-out;
+	-moz-transition: background-color 0.2s ease-in-out;
+	-ms-transition: background-color 0.2s ease-in-out;
+	-o-transition: background-color 0.2s ease-in-out;
+	transition: background-color 0.2s ease-in-out;
+}
+
+.subscribe-button:hover {
+	background-color: #f4b458;
+}
+
+.subscribe-button:focus {
+	outline: 0;
+}
+
+.creadit a {
+	background: #f35d5c;
+	color: white;
+	margin-top: 30px;
+	padding: 20px;
+	font-size: 15px;
+}
