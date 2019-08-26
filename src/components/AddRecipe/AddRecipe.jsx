@@ -10,7 +10,7 @@ export default existsAlready => {
   return (
     <>
       <Navbar />
-      <RecipeForm />
+      <RecipeForm submit={existsAlready ? modRecipe : addRecipe}/>
     </>
   );
 }
