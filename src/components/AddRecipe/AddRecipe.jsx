@@ -4,7 +4,7 @@ import axios from 'axios';
 import Navbar from '../Navbar/Navbar';
 import RecipeForm from '../RecipeForm/RecipeForm';
 
-export default existsAlready => {
+export default ({existsAlready}) => {
   const addRecipe = fields => {};
   const modRecipe = fields => {};
   return (

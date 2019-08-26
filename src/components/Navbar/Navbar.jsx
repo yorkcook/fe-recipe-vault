@@ -29,10 +29,10 @@ function Navbar() {
 							<li className='menu-item'>
 								<a href='/'>VIEW RECIPES</a>
 							</li>
-							<li className='menu-item'>
-								<a href='/'>EDIT RECIPES</a>
-							</li>
-							<Link to={`/addrecipe`} className='nav-link'>
+							<Link to={'/edit'} className='menu-item' add={false}>
+								<li>EDIT RECIPES</li>
+							</Link>
+							<Link to={`/edit`} className='nav-link' add={true}>
 								<li>ADD A RECIPE</li>
 							</Link>
 						</ol>
