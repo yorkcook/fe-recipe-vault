@@ -1,10 +1,9 @@
 import React from 'react'
-import Navbar from './../Navbar/Navbar'
+import Navbar from '../Navbar/Navbar'
 
 function NewPost() {
 	return (
 		<div>
-			<Navbar />
 			<main className='body'>
 				<header>
 					<h1>New Recipe</h1>
