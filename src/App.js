@@ -2,13 +2,13 @@ import React from 'react'
 import { Route } from 'react-router-dom'
 // import './App.css'
 import HomePage from './components/HomePage/HomePage'
-import NewPost from './components/NewPost/NewPost'
+import SetRecipe from './components/SetRecipe/SetRecipe'
 
 function App() {
 	return (
 		<div className='App'>
 			<HomePage />
-			<Route exact path='/addrecipe' component={NewPost} />
+			<Route path='/edit' component={SetRecipe} />
 		</div>
 	)
 }
