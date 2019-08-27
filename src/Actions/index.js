@@ -60,17 +60,17 @@ export const loginUser = (user) => (dispatch) => {
 		})
 }
 
-export const getRecipes = () => dispatch => {
+export const getRecipes = () => (dispatch) => {
 	console.log('getRecipes called')
 	dispatch({
 		type: GET_RECIPES_START
 	})
 	return axiosWithAuth()
-		.get(`https://secret-family-recipe.herokuapp.com/api/auth/:id/recipes`)
+		.get(`https://secret-family-recipe.herokuapp.com/api/auth/recipes`)
 		.then(console.log)
 		.catch(console.log)
 }
 
-export const search = query => {
+export const search = (query) => {
 	console.log('search (stub)')
 }
