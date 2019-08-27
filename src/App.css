@@ -1,4 +1,19 @@
-.App {
-  text-align: center;
+p {
+	margin: 0;
+	padding: 0 10px;
 }
 
+.home {
+	color: white;
+	font-family: 'Mitr', sans-serif;
+}
+
+.home :hover {
+	color: #a81d1d;
+}
+
+@media (max-width: 500px) {
+	.home {
+		font-size: 15px;
+	}
+}
