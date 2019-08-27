@@ -65,3 +65,7 @@ export const getRecipes = () => dispatch => {
 		type: GET_RECIPES_START
 	})
 }
+
+export const search = query => {
+	console.log('search (stub)')
+}
