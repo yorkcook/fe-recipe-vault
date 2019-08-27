@@ -1,4 +1,5 @@
 import axios from 'axios'
+import axiosWithAuth from '../Utils/axiosWithAuth'
 
 export const REGISTER_USER_START = 'REGISTER_USER_START'
 export const REGISTER_USER_SUCCESS = 'REGISTER_USER_SUCCESS'
@@ -7,6 +8,10 @@ export const REGISTER_USER_FAILURE = 'REGISTER_USER_FAILURE'
 export const LOGIN_USER_START = 'LOGIN_USER_START'
 export const LOGIN_USER_SUCCESS = 'LOGIN_USER_SUCCESS'
 export const LOGIN_USER_FAILURE = 'LOGIN_USER_FAILURE'
+
+export const GET_RECIPES_START = 'GET_RECIPES_START'
+export const GET_RECIPES_SUCCESS = 'GET_RECIPES_SUCCESS'
+export const GET_RECIPES_FAILURE = 'GET_RECIPES_FAILURE'
 
 const baseEndpoint = 'https://secret-family-recipe.herokuapp.com/api'
 
@@ -53,4 +58,19 @@ export const loginUser = (user) => (dispatch) => {
 				payload: err
 			})
 		})
+}
+
+export const getRecipes = () => dispatch => {
+	console.log('getRecipes called')
+	dispatch({
+		type: GET_RECIPES_START
+	})
+	return axiosWithAuth()
+		.get(`https://secret-family-recipe.herokuapp.com/api/auth/:id/recipes`)
+		.then(console.log)
+		.catch(console.log)
+}
+
+export const search = query => {
+	console.log('search (stub)')
 }
