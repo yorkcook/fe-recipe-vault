@@ -8,6 +8,10 @@ export const LOGIN_USER_START = 'LOGIN_USER_START'
 export const LOGIN_USER_SUCCESS = 'LOGIN_USER_SUCCESS'
 export const LOGIN_USER_FAILURE = 'LOGIN_USER_FAILURE'
 
+export const GET_RECIPES_START = 'GET_RECIPES_START'
+export const GET_RECIPES_SUCCESS = 'GET_RECIPES_SUCCESS'
+export const GET_RECIPES_FAILURE = 'GET_RECIPES_FAILURE'
+
 const baseEndpoint = 'https://secret-family-recipe.herokuapp.com/api'
 
 export const registerUser = (newUser) => (dispatch) => {
@@ -53,4 +57,11 @@ export const loginUser = (user) => (dispatch) => {
 				payload: err
 			})
 		})
+}
+
+export const getRecipes = () => dispatch => {
+	console.log('getRecipes called')
+	dispatch({
+		type: GET_RECIPES_START
+	})
 }
