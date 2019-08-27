@@ -47,6 +47,7 @@ export const loginUser = (user) => (dispatch) => {
 	return axios
 		.post('https://secret-family-recipe.herokuapp.com/api/auth/login', user)
 		.then((res) => {
+			console.log('has id?', res)
 			dispatch({
 				type: LOGIN_USER_SUCCESS,
 				payload: res.data
