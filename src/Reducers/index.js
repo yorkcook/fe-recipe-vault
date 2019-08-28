@@ -133,7 +133,7 @@ function reducer(state = initialState, action) {
 				registeringUser: true
 			}
 		case REGISTER_USER_SUCCESS:
-			localStorage.setItem('token', action.payload.token)
+			// localStorage.setItem('token', action.payload.token)
 			return {
 				...state,
 				registeringUser: false,
@@ -183,7 +183,7 @@ function reducer(state = initialState, action) {
 				loggingIn: true
 			}
 		case LOGIN_USER_SUCCESS:
-			localStorage.setItem('token', action.payload.token)
+			// localStorage.setItem('token', action.payload.token)
 			return {
 				...state,
 				loggingIn: false,

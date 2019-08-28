@@ -46,12 +46,11 @@ export const addRecipe = (newRecipe) => (dispatch) => {
 		"this is the newRecipe that I'm sending to the backend",
 		newRecipe
 	)
-	return axios
+	return axiosWithAuth()
 		.post(baseEndpoint + 'new-recipe', newRecipe)
 		.then((res) => {
 			console.log(
-				"this is the newRecipe that I'm sending to the backend",
-				newRecipe
+				"recipe successfully added"
 			)
 			dispatch({
 				type: ADD_RECIPE_SUCCESS,
@@ -59,6 +58,7 @@ export const addRecipe = (newRecipe) => (dispatch) => {
 			})
 		})
 		.catch((err) => {
+			console.log('addRecipe failed')
 			dispatch({
 				type: ADD_RECIPE_FAILURE,
 				payload: err
@@ -70,7 +70,7 @@ export const deleteRecipe = (id) => (dispatch) => {
 	dispatch({
 		type: DELETE_RECIPE_START
 	})
-	return axios
+	return axiosWithAuth()
 		.delete(baseEndpoint + 'recipes/' + id)
 		.then((res) => {
 			dispatch({
@@ -92,7 +92,7 @@ export const editRecipe = (updatedRecipe) => (dispatch) => {
 	})
 	let id = updatedRecipe.id
 	delete updatedRecipe.id
-	return axios
+	return axiosWithAuth()
 		.put(baseEndpoint + 'recipes/' + id, updatedRecipe)
 		.then((res) => {
 			dispatch({
@@ -163,9 +163,9 @@ export const registerUser = (newUser) => (dispatch) => {
 			newUser
 		)
 		.then((res) => {
+			localStorage.setItem('token', res.data.token)
 			dispatch({
-				type: REGISTER_USER_SUCCESS,
-				payload: res.data
+				type: REGISTER_USER_SUCCESS
 			})
 		})
 		.catch((err) => {
@@ -184,9 +184,9 @@ export const loginUser = (user) => (dispatch) => {
 	return axios
 		.post('https://secret-family-recipe.herokuapp.com/api/auth/login', user)
 		.then((res) => {
+			localStorage.setItem('token', res.data.token)
 			dispatch({
-				type: LOGIN_USER_SUCCESS,
-				payload: res.data
+				type: LOGIN_USER_SUCCESS
 			})
 		})
 		.catch((err) => {
