@@ -43,14 +43,14 @@ export const addRecipe = (newRecipe) => (dispatch) => {
 	console.log(newRecipe)
 	dispatch({ type: ADD_RECIPE_START })
 	console.log(
-		"this is the newRecipe that I'm sending to the backend",
+		"POST START this is the newRecipe that I'm sending to the backend",
 		newRecipe
 	)
-	return axiosWithAuth()
+	return axios
 		.post(baseEndpoint + 'new-recipe', newRecipe)
 		.then((res) => {
 			console.log(
-				"recipe successfully added"
+				"POST recipe success"
 			)
 			dispatch({
 				type: ADD_RECIPE_SUCCESS,
@@ -58,7 +58,7 @@ export const addRecipe = (newRecipe) => (dispatch) => {
 			})
 		})
 		.catch((err) => {
-			console.log('addRecipe failed')
+			console.log('POST addRecipe failed')
 			dispatch({
 				type: ADD_RECIPE_FAILURE,
 				payload: err
@@ -185,6 +185,7 @@ export const loginUser = (user) => (dispatch) => {
 		.post('https://secret-family-recipe.herokuapp.com/api/auth/login', user)
 		.then((res) => {
 			localStorage.setItem('token', res.data.token)
+			console.log('loginUser res', res)
 			dispatch({
 				type: LOGIN_USER_SUCCESS
 			})

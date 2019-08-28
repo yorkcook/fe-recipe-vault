@@ -40,17 +40,17 @@ const initialState = {
 	editingRecipe: false,
 	error: null,
 	registeringUser: false,
-	loggingIn: false,
-	recipe: {
-		title: '',
-		source: '',
-		description: '',
-		amount: '',
-		ingredient: '',
-		measurement: '',
-		instructions: '',
-		category: ''
-	}
+	loggingIn: false
+	// recipe: {
+	// 	title: '',
+	// 	source: '',
+	// 	description: '',
+	// 	amount: '',
+	// 	ingredient: '',
+	// 	measurement: '',
+	// 	instructions: '',
+	// 	category: ''
+	// }
 }
 
 function reducer(state = initialState, action) {
@@ -107,10 +107,22 @@ function reducer(state = initialState, action) {
 				error: action.payload
 			}
 		case ADD_RECIPE_SUCCESS:
-			return {
-				...state,
-				addingRecipe: true
-			}
+				let newRecipe ={
+					title: '',
+						 source: '',
+						 description: '',
+						 amount: '',
+						 ingredient: '',
+						 measurement: '',
+						 instructions: '',
+						 category: ''}
+						 
+						return{ ...state, recipes: [...state.recipes, newRecipe] };
+			// return {
+			// 	...state,
+			// 	addingRecipe: false,
+			// 	recipe: action.payload
+			// }
 		case ADD_RECIPE_START:
 			return {
 				...state,
@@ -133,7 +145,6 @@ function reducer(state = initialState, action) {
 				registeringUser: true
 			}
 		case REGISTER_USER_SUCCESS:
-			// localStorage.setItem('token', action.payload.token)
 			return {
 				...state,
 				registeringUser: false,
