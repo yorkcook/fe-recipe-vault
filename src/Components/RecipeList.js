@@ -28,9 +28,9 @@ class RecipeList extends React.Component {
 	}
 
 	render() {
-		console.log(this.props)
+		console.log('RecipeList props', this.props)
 		let recipesToDisplay = []
-		if (this.props.recipes.length > 0) {
+		if (this.props.recipes && this.props.recipes.length > 0) {
 			recipesToDisplay = this.props.recipes
 		} else {
 			recipesToDisplay = this.props.recipes
@@ -43,11 +43,11 @@ class RecipeList extends React.Component {
 					</Quote>
 				</div>
 				<SearchBar />
-				<RecipeLists>
+				{/* <RecipeLists>
 					{recipesToDisplay.map((recipe) => (
 						<Recipe recipe={recipe} />
 					))}
-				</RecipeLists>
+				</RecipeLists> */}
 			</div>
 		)
 	}

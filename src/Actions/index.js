@@ -46,7 +46,7 @@ export const addRecipe = (newRecipe) => (dispatch) => {
 		"POST START this is the newRecipe that I'm sending to the backend",
 		newRecipe
 	)
-	return axios
+	return axiosWithAuth()
 		.post(baseEndpoint + 'new-recipe', newRecipe)
 		.then((res) => {
 			console.log(
@@ -58,7 +58,7 @@ export const addRecipe = (newRecipe) => (dispatch) => {
 			})
 		})
 		.catch((err) => {
-			console.log('POST addRecipe failed')
+			console.log('POST addRecipe failed', err)
 			dispatch({
 				type: ADD_RECIPE_FAILURE,
 				payload: err
