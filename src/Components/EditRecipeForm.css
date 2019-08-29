@@ -1,52 +1,52 @@
 .editImage {
-    background-image: url('./Image/apple.jpg');
-    background-size : cover;
-    margin-top      : 50px;
-    resize          : both;
-    overflow        : scroll;
-    opacity         : 0.8;
+	background: linear-gradient(to right, #654ea3, #eaafc8);
+	background-size: cover;
+	margin-top: 50px;
+	resize: both;
+	overflow: scroll;
+	opacity: 0.8;
 }
 
-.ingredientsInput {
-    width: 250px;
-    height: 60px;
-    border: none;
-    /* margin: 10px; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    color: #0e1111 ;
-    font-size: 15px;
-    padding : 10px 10px;
-    display: block;
+.descriptionInput {
+	width: 250px;
+	height: 60px;
+	border: none;
+	/* margin: 10px; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgb(226, 223, 223);
+	color: #0e1111;
+	font-size: 15px;
+	padding: 10px 10px;
+	display: block;
 }
 
-.instructionsInput {
-    width: 250px;
-    height: 60px;
-    border: none;
-    /* margin: 10px; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    color: #0e1111 ;
-    font-size: 15px;
-    padding : 10px 10px;
-    display: block;
+.amountInput {
+	width: 250px;
+	height: 40px;
+	border: none;
+	/* margin: 10px; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	color: #0e1111;
+	font-size: 15px;
+	padding: 10px 10px;
+	display: block;
 }
 
 .items {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 5px;
 }
 
 .title {
-    padding-bottom: 40px;
-    font-size     : 25px;
-    color         : #1f1f44;
-    font-weight   : bold;
+	padding-bottom: 40px;
+	font-size: 25px;
+	color: #1f1f44;
+	font-weight: bold;
 }

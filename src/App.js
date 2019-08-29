@@ -1,23 +1,26 @@
 import React from 'react'
 import './App.css'
+import RecipeList from './Components/RecipeList'
+import AddRecipeForm from './Components/AddRecipeForm'
+import RecipeDetails from './Components/RecipeDetails'
 import { Route, Link } from 'react-router-dom'
+import EditRecipeForm from './Components/EditRecipeForm'
 import styled from 'styled-components'
 import Login from './Components/Login'
 import PrivateRoute from './Components/PrivateRoute'
 import { connect } from 'react-redux'
 import Signup from './Components/Signup'
-import RecipeList from './Components/RecipeList';
 
 // @tablet: (max-width: 800px)
 // @phone: (max-width: 500px)
 // @small-desktop: (max-width: 1265px)
 
 const AppDiv = styled.div`
-	max-width: 1265px;
+	max-width: 100vw;
 	height: 100%;
 	margin: 0 0;
 	font-family: 'Cherry Swash', cursive;
-	@media (max-width: 1265px) {
+	@media (max-width: 100vw) {
 		width: 100%;
 	}
 	@media (max-width: 800px) {
@@ -30,10 +33,10 @@ const Header = styled.header`
 	justify-content: flex-end;
 	align-items: center;
 	height: 45px;
-	width: 1265px;
+	width: 100vw;
 	font-family: 'Mitr', sans-serif;
-	background-color: #6d748c;
-	@media (max-width: 1265px) {
+	background-color: transparent;
+	@media (max-width: 100vw) {
 		width: 100%;
 	}
 	@media (max-width: 800px) {
@@ -88,7 +91,8 @@ const MenuBar = styled.div`
 
 const NavP = styled.p`
 	padding: 0 25px;
-	color: white;
+	color: purple;
+	font-size: 25px;
 	:hover {
 		color: #a00000;
 	}
@@ -101,7 +105,7 @@ const MenuP = styled.p`
 	padding: 0 25px;
 	color: #a00000;
 	:hover {
-		color: #1f1f44;
+		// color: #1f1f44;
 	}
 	@media (max-width: 500px) {
 		font-size: 15px;
@@ -109,7 +113,7 @@ const MenuP = styled.p`
 `
 
 const MainContent = styled.div`
-	width: 85%;
+	width: 100vw;
 	margin: 0 auto;
 
 	@media (max-width: 1265px) {
@@ -131,10 +135,10 @@ const MainContent = styled.div`
 
 const Footer = styled.footer`
 	height: 45px;
-	width: 1265px;
-	background-color: #6d748c;
+	width: 100vw;
+	background-color: transparent;
 	margin-top: 50px;
-	@media (max-width: 1265px) {
+	@media (max-width: 100vw) {
 		width: 100%;
 		justify-content: center;
 	}
@@ -160,53 +164,120 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<AppDiv>
-				<Header>
+			<header>
+				<div>
 					{localStorage.getItem('token') ? null : (
-						<Link to='/login' style={{ textDecoration: 'none' }}>
+						<Link
+							to='/login'
+							style={{
+								textDecoration: 'none',
+								color: 'orange',
+								fontSize: '50px'
+							}}>
 							<NavP> LOG IN </NavP>
 						</Link>
 					)}
 
 					{localStorage.getItem('token') ? null : (
-						<Link to='/signup' style={{ textDecoration: 'none' }}>
+						<Link
+							to='/signup'
+							style={{ textDecoration: 'none', color: 'orange' }}>
 							<NavP> SIGN UP </NavP>
 						</Link>
 					)}
 
 					{localStorage.getItem('token') ? (
-						<NavP onClick={(event) => this.logout()}>
-							{' '}
-							LOG OUT{' '}
-						</NavP>
+						<NavP onClick={(event) => this.logout()}> LOG OUT</NavP>
 					) : null}
-				</Header>
+					<div class='container'>
+						<h1>-Save Recipes That Matter-</h1>
+						<h3>You'll never regret it.</h3>
+					</div>
 
-				<MainContent>
-					<SubHeader>
-						<h1>Secret Family Recipes</h1>
-					</SubHeader>
+					<Header>
+						{localStorage.getItem('token') ? null : (
+							<Link
+								to='/login'
+								style={{
+									textDecoration: 'none',
+									color: 'orange'
+								}}>
+								<NavP> LOG IN </NavP>
+							</Link>
+						)}
 
-					<MenuBar>
-						<Link to='/recipes' style={{ textDecoration: 'none' }}>
-							<MenuP>View Recipes</MenuP>
-						</Link>
-						<Link
-							to='/addRecipe'
-							style={{ textDecoration: 'none' }}>
-							<MenuP>Add Recipe</MenuP>
-						</Link>
-					</MenuBar>
+						{localStorage.getItem('token') ? null : (
+							<Link
+								to='/signup'
+								style={{
+									textDecoration: 'none',
+									color: 'orange'
+								}}>
+								<NavP> SIGN UP </NavP>
+							</Link>
+						)}
 
-					<Route path='/login' component={Login} />
-					<Route path='/signup' component={Signup} />
-					<PrivateRoute path='/recipes' component={RecipeList} />
-					{/* <PrivateRoute exact path='/' component={Home} /> */}
-				</MainContent>
-				<Footer>
-					<p></p>
-				</Footer>
-			</AppDiv>
+						{localStorage.getItem('token') ? (
+							<NavP onClick={(event) => this.logout()}>
+								{' '}
+								LOG OUT{' '}
+							</NavP>
+						) : null}
+					</Header>
+
+					<MainContent>
+						<SubHeader>
+							<h1>Recipe Vault</h1>
+						</SubHeader>
+
+						<MenuBar>
+							<Link
+								to='/recipes'
+								style={{
+									textDecoration: 'none',
+									color: 'orange'
+								}}>
+								<MenuP>View Recipes</MenuP>
+							</Link>
+							<Link
+								to='/addRecipe'
+								style={{
+									textDecoration: 'none',
+									color: 'orange'
+								}}>
+								<MenuP>Add Recipe</MenuP>
+							</Link>
+						</MenuBar>
+
+						<Route path='/login' component={Login} />
+						<Route path='/signup' component={Signup} />
+						<Route
+							exact
+							path='/recipes/share/:id'
+							component={RecipeDetails}
+						/>
+						<PrivateRoute
+							exact
+							path='/recipes'
+							component={RecipeList}
+						/>
+						<PrivateRoute
+							exact
+							path='/recipes/:id'
+							component={RecipeDetails}
+						/>
+						<PrivateRoute
+							path='/addRecipe'
+							component={AddRecipeForm}
+						/>
+						<PrivateRoute
+							path='/editRecipe/:id'
+							component={EditRecipeForm}
+						/>
+						{/* <PrivateRoute exact path='/' component={Home} /> */}
+					</MainContent>
+				</div>
+			</header>
 		)
 	}
 }
