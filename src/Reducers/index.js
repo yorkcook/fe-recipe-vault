@@ -78,7 +78,7 @@ function reducer(state = initialState, action) {
 				fetchingRecipe: true
 			}
 		case GET_RECIPE_SUCCESS:
-			console.log('either get the recipe or go hungry: ', action.payload)
+			// console.log('either get the recipe or go hungry: ', action.payload)
 			return {
 				...state,
 				fetchingRecipe: false,
@@ -184,6 +184,7 @@ function reducer(state = initialState, action) {
 			}
 		case LOGIN_USER_SUCCESS:
 			localStorage.setItem('token', action.payload.token)
+			localStorage.setItem('user_id', action.payload.user_id)
 			return {
 				...state,
 				loggingIn: false,

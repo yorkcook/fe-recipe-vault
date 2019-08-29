@@ -100,12 +100,12 @@ class EditRecipeForm extends React.Component {
 			id: this.props.match.params.id
 		})
 		this.props.getRecipe(this.props.match.params.id)
-		console.log(this.props.match.params.id)
+		console.log('KKKKKKKK', this.props.match.params.id)
 		if (this.state.id !== this.props.recipe.id) {
 			this.setState({
 				title: this.props.recipe.title,
 				source: this.props.recipe.source,
-				decription: this.props.recipe.description,
+				description: this.props.recipe.description,
 				amount: this.props.recipe.amount,
 				ingredient: this.props.recipe.ingredient,
 				instructions: this.props.recipe.instructions,
@@ -122,6 +122,7 @@ class EditRecipeForm extends React.Component {
 
 	editRecipe = (event) => {
 		event.preventDefault()
+		console.log('++++++', this.state)
 		this.props.editRecipe(this.state)
 		this.props.history.push(`/recipes/${this.props.match.params.id}`)
 	}
