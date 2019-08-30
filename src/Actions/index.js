@@ -112,12 +112,14 @@ export const getRecipe = (id) => (dispatch) => {
 			`https://secret-family-recipe.herokuapp.com/api/auth/find-recipes/${id}`
 		)
 		.then((res) => {
+			console.log('getRecipe response', res)
 			dispatch({
 				type: GET_RECIPE_SUCCESS,
 				payload: res.data
 			})
 		})
 		.catch((err) => {
+			console.log('getRecipe error', err)
 			dispatch({
 				type: GET_RECIPE_FAILURE,
 				payload: err
@@ -129,8 +131,9 @@ export const getRecipes = () => (dispatch) => {
 	dispatch({
 		type: GET_RECIPES_START
 	})
+	const userID = localStorage.getItem('user_id')
 	return axiosWithAuth()
-		.get(baseEndpoint + 'recipes')
+		.get(baseEndpoint + `${userID}/recipes`)
 		.then((res) => {
 			dispatch({
 				type: GET_RECIPES_SUCCESS,
