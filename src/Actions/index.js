@@ -221,7 +221,9 @@ export const search = (query, allItems) => {
 			payload: allItems
 		}
 	}
-	const selection = allItems.filter(item => item.category === query);
+	const selection = allItems.filter(item => {
+		return item.category.toUpperCase() === query.toUpperCase()
+	});
 	return {
 		type: SEARCH_RECIPE,
 		payload: selection
