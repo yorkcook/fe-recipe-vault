@@ -40,12 +40,7 @@ class RecipeList extends React.Component {
 		// 	recipesToDisplay = this.props.recipes
 		// }
 		return (
-			<div>
-				<div className='main-image'>
-					<Quote>
-						<p></p>
-					</Quote>
-				</div>
+			<>
 				<SearchBar cb={this.filter} />
 				<RecipeLists>
 					{this.props.filteredRecipes.length === 0 ? (
@@ -54,7 +49,7 @@ class RecipeList extends React.Component {
 						<Recipe recipe={recipe} />
 					))}
 				</RecipeLists>
-			</div>
+			</>
 		)
 	}
 }
