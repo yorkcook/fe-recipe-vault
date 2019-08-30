@@ -32,6 +32,7 @@ class App extends React.Component {
 						render={() => (
 							<nav>
 								<NavLink
+									exact
 									to='/recipes'
 								>All Recipes</NavLink>
 								<NavLink
