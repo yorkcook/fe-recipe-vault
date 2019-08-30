@@ -88,7 +88,7 @@ class Login extends React.Component {
 
 	loginUser = (e) => {
 		e.preventDefault()
-		this.props.loginUser(this.state.credentials)
+		this.props.loginUser(this.state.credentials, this.props.history)
 	}
 
 	render() {

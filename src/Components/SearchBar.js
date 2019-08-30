@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './SearchBar.css';
 
 export default ({ cb }) => {
   const [query, setQuery] = useState('');
@@ -14,7 +15,7 @@ export default ({ cb }) => {
   }
 
   return (
-    <form onSubmit={submit}>
+    <form onSubmit={submit} className='filter'>
       <input
         type='text'
         id='query'

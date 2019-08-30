@@ -59,7 +59,7 @@ const Button = styled.button`
 	height: 40px;
 	font-family: 'Nunito', sans-serif;
 	// background: #6d748c;
-	color: white;
+	color: black;
 	font-size: 15px;
 	border-radius: 10px;
 	outline: none;
