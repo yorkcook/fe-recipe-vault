@@ -69,10 +69,7 @@ class AddRecipeForm extends React.Component {
 	state = {
 		title: '',
 		source: '',
-		description: '',
-		amount: '',
 		ingredient: '',
-		measurement: '',
 		instructions: '',
 		category: ''
 	}
@@ -89,14 +86,8 @@ class AddRecipeForm extends React.Component {
 	createRecipe = (event) => {
 		console.log('hi', this.state)
 		event.preventDefault()
-		const cludge = {
-			title: this.state.title,
-			source: this.state.source,
-			ingredients: this.state.ingredient,
-			instructions: this.state.instructions,
-			category: this.state.category
-		}
-		this.props.addRecipe(cludge)
+
+		this.props.addRecipe(this.state)
 		this.props.history.push('/recipes')
 	}
 	cancelAdd = (event) => {
@@ -140,31 +131,7 @@ class AddRecipeForm extends React.Component {
 							</EachInput>
 							<EachInput>
 								<div className='items'>
-									<p>DESCRIPTION :</p>
-								</div>
-								<AddInput
-									className='input'
-									onChange={this.handleChange}
-									placeholder='description'
-									value={this.state.description}
-									name='description'
-								/>
-							</EachInput>
-							<EachInput>
-								<div className='items'>
-									<p>AMOUNT :</p>
-								</div>
-								<AddInput
-									className='input'
-									onChange={this.handleChange}
-									placeholder='amount'
-									value={this.state.amount}
-									name='amount'
-								/>
-							</EachInput>
-							<EachInput>
-								<div className='items'>
-									<p>INGREDIENT :</p>
+									<p>INGREDIENTS :</p>
 								</div>
 								<textarea
 									className='instructionsInput'
@@ -172,17 +139,6 @@ class AddRecipeForm extends React.Component {
 									placeholder='ingredients'
 									value={this.state.ingredient}
 									name='ingredient'></textarea>
-							</EachInput>
-							<EachInput>
-								<div className='items'>
-									<p>MEASUREMENT :</p>
-								</div>
-								<textarea
-									className='instructionsInput'
-									onChange={this.handleChange}
-									placeholder='instructions'
-									value={this.state.measurement}
-									name='measurement'></textarea>
 							</EachInput>
 							<EachInput>
 								<div className='items'>
