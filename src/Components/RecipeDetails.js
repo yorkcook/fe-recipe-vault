@@ -114,10 +114,6 @@ class Recipe extends React.Component {
 								</Button>
 							</div>
 						</ButtonDiv>
-						<text>
-							Share:{' '}
-							<text>{`${window.location.protocol}//${window.location.host}/recipes/share/${this.props.match.params.id}`}</text>
-						</text>
 					</Title>
 
 					<div className='instructions'>

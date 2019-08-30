@@ -1,10 +1,8 @@
 .imageAdd {
 	background: linear-gradient(to right, #654ea3, #eaafc8);
 	background-size: cover;
-	resize: both;
 	overflow: scroll;
 	opacity: 0.8;
-	margin-top: 50px;
 }
 
 ::-webkit-scrollbar {

@@ -172,7 +172,7 @@ export const registerUser = (newUser) => (dispatch) => {
 		})
 }
 
-export const loginUser = (user) => (dispatch) => {
+export const loginUser = (user, history) => (dispatch) => {
 	console.log('hi', user)
 	dispatch({
 		type: LOGIN_USER_START
@@ -181,12 +181,14 @@ export const loginUser = (user) => (dispatch) => {
 		.post('https://secret-family-recipe.herokuapp.com/api/auth/login', user)
 		.then((res) => {
 			console.log('DATE', res.data)
+			history.push('/recipes')
 			dispatch({
 				type: LOGIN_USER_SUCCESS,
 				payload: res.data
 			})
 		})
 		.catch((err) => {
+			console.log('login failed', err)
 			dispatch({
 				type: LOGIN_USER_FAILURE,
 				payload: err

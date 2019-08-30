@@ -26,7 +26,7 @@ class App extends React.Component {
 		return (
 			<>
 				<header>
-					<h1>Recipe Vault</h1>
+					<h1>RECIPE VAULT</h1>
 					<Route
 						path={['/recipes', '/addRecipe', '/editRecipe']}
 						render={() => (
