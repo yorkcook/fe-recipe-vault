@@ -118,6 +118,16 @@ section p.lead-in:first-letter {
 	top: -0.2em;
 }
 
+nav {
+	display: flex;
+	justify-content: flex-end;
+}
+
+nav h1 {
+	align-self: flex-start;
+	background-color: red
+}
+
 /* background: rgba(84, 249, 227, 1);
 background: -webkit-linear-gradient(
 	top left,
