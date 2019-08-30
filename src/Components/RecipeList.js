@@ -10,6 +10,9 @@ const RecipeLists = styled.div`
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 30px;
 `
 
 const Quote = styled.div`
@@ -44,7 +47,7 @@ class RecipeList extends React.Component {
 				<SearchBar cb={this.filter} />
 				<RecipeLists>
 					{this.props.filteredRecipes.length === 0 ? (
-						<h2>no recipes</h2>
+						<h2 className='error'>no recipes</h2>
 					) : this.props.filteredRecipes.map((recipe) => (
 						<Recipe recipe={recipe} />
 					))}

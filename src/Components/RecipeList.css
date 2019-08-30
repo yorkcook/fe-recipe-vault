@@ -1,9 +1,6 @@
-body {
-	width: 100vw;
-	height: 100vh;
+h2.error {
+	font-size: 3rem;
+	font-weight: bold;
+	color: #e85a4f;
+	padding: 30px;
 }
-
-/* .main-image {
-	background-image: url('./Image/salad.jpg');
-	margin: 30px 0;
-} */
