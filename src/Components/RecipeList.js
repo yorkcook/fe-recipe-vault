@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Recipe from './Recipe'
 import SearchBar from './SearchBar'
 import styled from 'styled-components'
-import { getRecipes } from '../Actions'
+import { getRecipes, search } from '../Actions'
 import './RecipeList.css'
 
 const RecipeLists = styled.div`
@@ -24,15 +24,21 @@ class RecipeList extends React.Component {
 		super(props)
 	}
 	componentDidMount() {
-		this.props.getRecipes()
+		if (!this.props.upToDate) {
+			this.props.getRecipes()
+		}
+	}
+
+	filter = query => {
+		this.props.search(query, this.props.recipes)
 	}
 
 	render() {
-		console.log(this.props)
-		let recipesToDisplay = []
-		if (this.props.recipes.length > 0) {
-			recipesToDisplay = this.props.recipes
-		}
+		console.log('recipelist props', this.props)
+		// let recipesToDisplay = []
+		// if (this.props.recipes.length > 0) {
+		// 	recipesToDisplay = this.props.recipes
+		// }
 		return (
 			<div>
 				<div className='main-image'>
@@ -40,9 +46,11 @@ class RecipeList extends React.Component {
 						<p></p>
 					</Quote>
 				</div>
-				<SearchBar />
+				<SearchBar cb={this.filter} />
 				<RecipeLists>
-					{recipesToDisplay.map((recipe) => (
+					{this.props.filteredRecipes.length === 0 ? (
+						<h2>no recipes</h2>
+					) : this.props.filteredRecipes.map((recipe) => (
 						<Recipe recipe={recipe} />
 					))}
 				</RecipeLists>
@@ -54,10 +62,11 @@ class RecipeList extends React.Component {
 const mapStateToProps = (state) => ({
 	recipes: state.recipes || [],
 	filteredRecipes: state.filteredRecipes || [],
+	upToDate: state.recipesAccurate,
 	token: state.token
 })
 
 export default connect(
 	mapStateToProps,
-	{ getRecipes }
+	{ getRecipes, search }
 )(RecipeList)

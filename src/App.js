@@ -159,6 +159,7 @@ class App extends React.Component {
 
 	logout = () => {
 		localStorage.removeItem('token')
+		localStorage.removeItem('user_id')
 		window.location.href = '/login'
 	}
 
