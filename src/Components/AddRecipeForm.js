@@ -89,7 +89,14 @@ class AddRecipeForm extends React.Component {
 	createRecipe = (event) => {
 		console.log('hi', this.state)
 		event.preventDefault()
-		this.props.addRecipe(this.state)
+		const cludge = {
+			title: this.state.title,
+			source: this.state.source,
+			ingredients: this.state.ingredient,
+			instructions: this.state.instructions,
+			category: this.state.category
+		}
+		this.props.addRecipe(cludge)
 		this.props.history.push('/recipes')
 	}
 	cancelAdd = (event) => {
