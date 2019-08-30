@@ -1,8 +1,6 @@
 .editImage {
 	background: linear-gradient(to right, #654ea3, #eaafc8);
 	background-size: cover;
-	margin-top: 50px;
-	resize: both;
 	overflow: scroll;
 	opacity: 0.8;
 }
