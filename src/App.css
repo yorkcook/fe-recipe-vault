@@ -1,106 +1,110 @@
 p {
-	margin: 0;
-	padding: 0 10px;
+  margin: 0;
+  padding: 0 10px;
+}
+
+header {
+  height: 10vh;
 }
 
 .home {
-	color: white;
-	font-family: 'Mitr', sans-serif;
+  color: white;
+  font-family: "Mitr", sans-serif;
 }
 
 .home :hover {
-	color: #a81d1d;
+  color: #a81d1d;
 }
 
 @media (max-width: 500px) {
-	.home {
-		font-size: 15px;
-	}
+  .home {
+    font-size: 15px;
+  }
 }
 
-@import url(https://fonts.googleapis.com/css?family=Abril+Fatface);
-@import url(https://fonts.googleapis.com/css?family=Amatic+SC);
+@import url(https://fonts.googleapis.com/css?family=Abril + Fatface);
+@import url(https://fonts.googleapis.com/css?family=Amatic + SC);
 /* Mixins */
 /* Base Styles */
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html,
 body {
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 10px;
-	font-weight: 100;
-	margin: 0;
-	padding: 0;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-	margin: 0 auto;
-	max-width: 750px;
-	padding: 0 24px;
+  margin: 0 auto;
+  max-width: 750px;
+  padding: 0 24px;
 }
 
 header h1 {
-	color: #ffffff;
-	font-size: 5rem;
-	padding: 10px 0;
-	margin: 0;
+  color: #ffffff;
+  font-size: 5rem;
+  padding: 10px 0;
+  margin: 0;
 }
 header h3 {
-	color: #fff0a5;
-	font-size: 3.75rem;
-	font-style: italic;
-	font-weight: 100;
-	margin: 0;
+  color: #fff0a5;
+  font-size: 3.75rem;
+  font-style: italic;
+  font-weight: 100;
+  margin: 0;
 }
 
 section {
-	padding: 2rem;
+  padding: 2rem;
 }
 section p {
-	font-size: 2.5rem;
-	line-height: 3.5rem;
+  font-size: 2.5rem;
+  line-height: 3.5rem;
 }
 section p.lead-in {
-	font-size: 3rem;
+  font-size: 3rem;
 }
 section p.lead-in:first-letter {
-	font-size: 7.25rem;
-	display: block;
-	float: left;
-	position: relative;
-	line-height: 0.1;
-	top: -0.2em;
+  font-size: 7.25rem;
+  display: block;
+  float: left;
+  position: relative;
+  line-height: 0.1;
+  top: -0.2em;
 }
 
 header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	text-align: center;
-	background: #222;
-	padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background: #222;
+  padding: 5px 20px;
 }
 
 header nav {
-	display: flex;
-	justify-content: space-evenly;
-	color: #ffffff;
+  display: flex;
+  justify-content: space-evenly;
+  color: #ffffff;
 }
 
 header a {
-	text-decoration: none;
-	color: #ffffff;
-	font-size: 3rem;
-	margin: 0 14px;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 3rem;
+  margin: 0 14px;
 }
 header a:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 .active {
-	color: #e85a4f;
+  color: #e85a4f;
 }
 
 /* background: rgba(84, 249, 227, 1);
