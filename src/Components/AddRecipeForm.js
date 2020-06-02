@@ -1,5 +1,5 @@
 import React from "react";
-import { addRecipe, getCategories } from "../Actions";
+import { addRecipe, getRecipes } from "../Actions";
 import { connect } from "react-redux";
 import styled from "styled-components";
 import "./AddRecipeForm.css";
@@ -75,7 +75,7 @@ class AddRecipeForm extends React.Component {
   };
 
   componentDidMount() {
-    this.props.getCategories();
+    this.props.getRecipes();
   }
 
   handleChange = (event) => {
@@ -189,6 +189,6 @@ const mapStateToProps = (state) => ({
   categories: state.categories,
 });
 
-export default connect(mapStateToProps, { addRecipe, getCategories })(
+export default connect(mapStateToProps, { addRecipe, getRecipes })(
   AddRecipeForm
 );
