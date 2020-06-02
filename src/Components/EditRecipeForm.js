@@ -107,7 +107,6 @@ class EditRecipeForm extends React.Component {
         category: this.props.recipe.category,
       });
     }
-    console.log(this.props.upToDate);
   }
 
   handleChange = (event) => {
@@ -224,7 +223,6 @@ class EditRecipeForm extends React.Component {
 
 const mapStateToProps = (state) => ({
   recipe: state.recipe,
-  upToDate: state.recipesAccurate,
 });
 
 export default connect(mapStateToProps, { editRecipe, getRecipe })(
