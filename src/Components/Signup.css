@@ -1,6 +1,7 @@
 .imageSignup {
-    background-image: url('./Image/soup.jpg');
-    background-size : cover;
-    overflow        : scroll;
-    opacity         : 0.8;
+  height: 90vh;
+  object-fit: contain;
+  background-image: url("./Image/soup.jpg");
+  overflow: scroll;
+  opacity: 0.8;
 }
