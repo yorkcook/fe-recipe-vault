@@ -72,10 +72,13 @@ export const deleteRecipe = (id) => (dispatch) => {
   return axiosWithAuth()
     .delete(baseEndpoint + "recipes/" + id)
     .then((res) => {
-      dispatch({
-        type: DELETE_RECIPE_SUCCESS,
-        payload: res.data,
-      });
+      dispatch(
+        {
+          type: DELETE_RECIPE_SUCCESS,
+          payload: res.data,
+        },
+        window.location.reload()
+      );
     })
     .catch((err) => {
       dispatch({
